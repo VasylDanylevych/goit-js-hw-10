@@ -18,7 +18,7 @@ function inputValue(e) {
     const valueOnInpud = input.value.trim();
         fetchCountries(valueOnInpud)
         .then((countries) => {
-            // console.log(countries)
+            console.log(countries)
             if (countries.length > 10) 
             return Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
 
@@ -39,32 +39,30 @@ function inputValue(e) {
 
 function createListOfCountries(country) {
     return `
-    <li>
-        <img class="flag-img" src="${country.flags.svg}"><p>"${country.name.common}"</p>
+    <li class = "countries-list-item">
+        <img class="flag-img" src="${country.flags.svg}"><p>${country.name.common}</p>
     </li>`
 };
 
 function createCardOfCountry(country) {
     return `
-    <img class="flag-img" src="${country.flags.svg}"><h2>"${country.name.common}"</h2>
-    <p><strong>"Capital:</strong> ${country.capital[0]}"</p>
-    <p><strong>"Population:</strong> ${country.population}"</p>
-    <p><strong>"Languages:</strong> ${Object.values(country.languages).join(', ')}"</p>
-    `
+    <li class = "country-info-item">
+        <div class = "country-item"><img class="flag-img" src="${country.flags.svg}"><h2>${country.name.common}</h2></div>
+        <p><strong>Capital:</strong> ${country.capital}</p>
+        <p><strong>Population:</strong> ${country.population}</p>
+        <p><strong>Languages:</strong> ${Object.values(country.languages).join(", ")}</p>
+    </li>`
 };
 
 function updateList(markup) {
     countryList.innerHTML = markup;
 };
 
-function updateInfo(markup) {
-    countryInfo.innerHTML = markup;
-};
+// function updateInfo(markup) {
+//     countryInfo.innerHTML = markup;
+// };
 
 
 function onError(err) {
     Notiflix.Notify.failure("Oops, there is no country with that name")
 };
-
-
-

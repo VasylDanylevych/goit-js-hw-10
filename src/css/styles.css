@@ -24,8 +24,17 @@ img {
   margin-right: 10px;
 }
 
-li {
+.countries-list-item {
   list-style: none; 
+  display: flex;
+  align-items: center;
+}
+
+.country-info-item {
+  list-style: none; 
+}
+
+.country-item{
   display: flex;
   align-items: center;
 }
