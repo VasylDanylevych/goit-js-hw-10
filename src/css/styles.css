@@ -18,3 +18,14 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+li {
+  list-style: none; 
+  display: flex;
+  align-items: center;
+}
