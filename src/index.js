@@ -18,7 +18,7 @@ function inputValue(e) {
     const valueOnInpud = input.value.trim();
         fetchCountries(valueOnInpud)
         .then((countries) => {
-            console.log(countries)
+            // console.log(countries)
             if (countries.length > 10) 
             return Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
 
@@ -29,7 +29,7 @@ function inputValue(e) {
             
             if (countries.length = 1) {
                 return countries.reduce((markup, country) => createCardOfCountry(country) + markup, "");
-            } else countryInfo.innerHTML = "";
+            } else countryList.innerHTML = "";
             
         })
         .then(updateList)
