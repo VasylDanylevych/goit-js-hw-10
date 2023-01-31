@@ -32,8 +32,8 @@ function inputValue(e) {
             }  
 
             if (countries.length >= 2 && countries.length <= 10) {
-                const countryListMarkup = countries.reduce((markup, country) => createListOfCountries(country) + markup, "")
-                updateList(countryListMarkup)
+                const countryListMarkup = countries.reduce((markup, country) => createListOfCountries(country) + markup, "");
+                updateList(countryListMarkup);
                 countryInfo.innerHTML = "";
                 return
             }  
